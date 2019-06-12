@@ -4,19 +4,25 @@ import { Home } from './components/Home';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { NoMatch } from './components/NoMatch';
+import { Layout } from './Layout';
+import { NavigationBar } from './components/Navigation'
 
 function App() {
   return (
     <React.Fragment>
-      <Router>
-        <Switch>
-          <Route exact path ="/" component={Home} />
-          <Route path ="/about" component={About} />
-          <Route path ="/contact" component={Contact} />
-          <Route component={NoMatch} />
-        </Switch>
-      </Router>
+      <NavigationBar />
+      <Layout>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route component={NoMatch} />
+          </Switch>
+        </Router>
+      </Layout>
     </React.Fragment>
+
   );
 }
 
