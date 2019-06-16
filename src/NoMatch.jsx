@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const NoMatch = () => (
-    <div>
+    <div className="margen">
         <h2>No Match</h2>
     </div>
 )
