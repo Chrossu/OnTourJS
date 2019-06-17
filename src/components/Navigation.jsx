@@ -6,7 +6,7 @@ import logo from '../assets/logo.png';
 
 const Styles = styled.div`
   .navbar {
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0,0,0,0.6);
       height: 75px;
       position: absolute;
       top: 0px;
@@ -34,8 +34,8 @@ const Styles = styled.div`
 `;
 
 export const NavigationBar = () => (
-    <Styles>
-        <Navbar className="shadow fixed-top" expand="lg">
+    <Styles className="sticky-top">
+        <Navbar className="shadow"  expand="lg">
             <Navbar.Brand className="logo">
                 <img
                     src={logo}

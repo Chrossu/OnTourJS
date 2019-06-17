@@ -64,7 +64,7 @@ export const Catalogo = () => (
             <div className="div-principal">
               <Image src={bariloche} className="imagen" />
               <h3>Bariloche, Argentina</h3>
-              <p>Bariloche es mucho más que una ciudad; son vacaciones en la playa de un lago cristalino y preciosas noches al aire libre.</p>
+              <p>Bariloche es mucho más que una ciudad, son vacaciones en la playa de un lago cristalino y preciosas noches al aire libre.</p>
             </div>
           </Col>
           <Col xs="12" sm="4">
@@ -80,7 +80,7 @@ export const Catalogo = () => (
             <div className="div-principal">
               <Image src={bali} className="imagen" />
               <h3>Bali, Indonesia</h3>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste eaque voluptas corporis, qui optio facilis.</p>
+              <p>Bali es una postal viviente; un paraíso de Indonesia que parece ser de fantasía. No sigas esperando para venir a conocerlo.</p>
             </div>
           </Col>
           <Col xs="12" sm="4">

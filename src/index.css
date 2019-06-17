@@ -7,7 +7,7 @@ body {
 }
 .parallax {
     background-image: url('./assets/portada.jpg');
-    height: 82vh;
+    height: 84vh;
     background-size: cover;
     background-attachment: fixed;
     margin-bottom: 20px;
