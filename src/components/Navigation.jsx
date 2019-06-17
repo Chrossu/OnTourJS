@@ -35,7 +35,7 @@ const Styles = styled.div`
 
 export const NavigationBar = () => (
     <Styles>
-        <Navbar className=" shadow" expand="lg">
+        <Navbar className="shadow fixed-top" expand="lg">
             <Navbar.Brand className="logo">
                 <img
                     src={logo}
@@ -54,7 +54,7 @@ export const NavigationBar = () => (
                     </Nav.Item>
                     <div className="separador"></div>
                     <Nav.Item>
-                        <Nav.Link><Link to="/contact" className="lead">Contacto</Link></Nav.Link>
+                        <Nav.Link><Link to="/contact" className="lead">Catálogos turísticos</Link></Nav.Link>
                     </Nav.Item>
                     <div className="separador"></div>
                     <Nav.Item>
