@@ -37,9 +37,9 @@ export const NavigationBar = () => (
     <Styles>
         <Navbar className=" shadow" expand="lg">
             <Navbar.Brand className="logo">
-                <img 
-                  src={logo}
-                  width="140"
+                <img
+                    src={logo}
+                    width="140"
                 />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />

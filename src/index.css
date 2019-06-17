@@ -13,3 +13,18 @@ body {
     margin-bottom: 20px;
 }
 
+.pruebasssssssssssss {
+    color: rgb(39, 39, 39);
+}
+
+.back-presentacion {
+    background-color: rgba(0,0,0,0.8);
+    background-image: url('./assets/back-presentacion3.jpg');
+    background-size: cover;
+}
+
+.back-catalogo {
+    background-color: rgba(0,0,0,0.8);
+    background-image: url('./assets/back-catalogo.jpg');
+    background-size: cover;
+}
