@@ -87,14 +87,14 @@ export const Catalogo = () => (
             <div className="div-principal">
               <Image src={noruega} className="imagen" />
               <h3>Reine, Noruega</h3>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste eaque voluptas corporis, qui optio facilis.</p>
+              <p>Reine es uno de los pueblos más hermosos de Noruega. Deslumbrate con sus hermosas luces de atardecer.</p>
             </div>
           </Col>
           <Col xs="12" sm="4">
             <div className="div-principal">
               <Image src={tokyo} className="imagen" />
               <h3>Tokyo, Japón</h3>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste eaque voluptas corporis, qui optio facilis.</p>
+              <p>Tokyo es la capital de la tecnología. Ven a recorrer todos los rincones que esta maravillosa ciudad es capaz de ofrecer.</p>
             </div>
           </Col>
         </Row>

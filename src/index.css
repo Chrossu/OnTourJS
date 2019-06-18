@@ -23,6 +23,11 @@ body {
 }
 
 .back-catalogo {
-    background-image: url('./assets/back-catalogo3.jpg');
+    background-image: url('./assets/back-catalogo.jpg');
+    background-size: cover;
+}
+
+.back-campamento {
+    background-image: url('./assets/back-campamento.jpg');
     background-size: cover;
 }

@@ -19,7 +19,7 @@ const Styles = styled.div`
 
   .jumbo {
       margin: 0px 0px 15px 0px;
-      padding-bottom: 100px;
+      padding-bottom: 80px;
   }
 
   .texto-card {
