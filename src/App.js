@@ -1,10 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Home } from './Home';
-import { About } from './About';
-import { Contact } from './Contact';
-import { NoMatch } from './NoMatch';
-import { NavigationBar } from './components/Navigation';
+import { Home } from './components/pages/Home';
+import { NoMatch } from './components/pages/NoMatch';
+import { NavigationBar } from './components/layout/Navigation';
 
 function App() {
   return (
@@ -13,8 +11,6 @@ function App() {
           <NavigationBar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
             <Route component={NoMatch} />
           </Switch>
         </Router>
