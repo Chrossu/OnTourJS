@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://chross:chross@clusteronbreak-2rptt.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secret"
+}
