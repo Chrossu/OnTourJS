@@ -38,10 +38,6 @@ const Styles = styled.div`
     padding: 18px;
   }
 
-  .container {  
-    // box-shadow 0px 0px 12px;
-  }
-
   .jumbotron {
     padding: 1rem 2rem;
   }

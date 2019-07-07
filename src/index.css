@@ -5,6 +5,10 @@ body {
 .margen {
     margin-top: 75px;
 }
+
+.container .jumbotron {
+    background-color: #111111;
+}
 .parallax {
     background-image: url('./assets/portada.jpg');
     height: 84vh;
@@ -28,6 +32,5 @@ body {
 }
 
 .back-campamento {
-    background-image: url('./assets/back-campamento.jpg');
-    background-size: cover;
+    background-color: #111111;
 }

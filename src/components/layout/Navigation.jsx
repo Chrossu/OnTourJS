@@ -7,7 +7,7 @@ import logo from '../../assets/logo.png';
 const Styles = styled.div`
   .navbar {
       background-color: rgba(0,0,0,0.6);
-      height: 75px;
+      height: 65px;
       position: absolute;
       top: 0px;
       left: 0px;
@@ -23,23 +23,26 @@ const Styles = styled.div`
   }
 
   .marg-left{
-      margin-left: 18px;
+      margin-left: 17px;
   }
   
   .separador {
       display: inline-block;
       height: 40px;
       border-left: 1px solid rgb(211, 211, 211);
+      margin: 0px 3px;
   }
 `;
 
 export const NavigationBar = () => (
     <Styles className="sticky-top">
-        <Navbar className="shadow"  expand="lg">
+        <Navbar id="navbarcito" className="shadow"  expand="lg">
             <Navbar.Brand className="logo">
                 <img
                     src={logo}
-                    width="140"
+                    width="164"
+                    height="59"
+                    alt="Logo OnTour"
                 />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
