@@ -2,9 +2,9 @@ body {
     background-color: rgb(211, 211, 211);
 }
 
-.margen {
+/* .margen {
     margin-top: 75px;
-}
+} */
 
 .container .jumbotron {
     background-color: #111111;
@@ -13,6 +13,8 @@ body {
     background-image: url('./assets/portada.jpg');
     height: 84vh;
     background-size: cover;
+    background-position: 84%;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     margin-bottom: 20px;
 }

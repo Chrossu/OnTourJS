@@ -40,6 +40,7 @@ const Styles = styled.div`
 
   .jumbotron {
     padding: 1rem 2rem;
+    margin-bottom: 1rem;
   }
 `;
 

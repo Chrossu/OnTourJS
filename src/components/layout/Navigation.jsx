@@ -36,7 +36,7 @@ const Styles = styled.div`
 
 export const NavigationBar = () => (
     <Styles className="sticky-top">
-        <Navbar id="navbarcito" className="shadow"  expand="lg">
+        <Navbar className="shadow"  expand="lg">
             <Navbar.Brand className="logo">
                 <img
                     src={logo}
