@@ -70,8 +70,8 @@ const NavbarUser = () => {
                     className="noafi"
                 />
                 <ul className="align">
-                    <li style={{ marginTop: "13px" }}><Link to="/users"><i class="fas fa-home mr-1"></i>Home</Link></li>
-                    <li style={{ marginTop: "13px" }}><Link to="/contratos"><i class="fas fa-file-contract mr-1"></i>Registrar contrato</Link></li>
+                    <li style={{ marginTop: "13px" }}><Link to="/ejecutivo"><i class="fas fa-home mr-1"></i>Home</Link></li>
+                    <li style={{ marginTop: "13px" }}><Link to="/agregar-contrato"><i class="fas fa-file-contract mr-1"></i>Registrar contrato</Link></li>
                     <li style={{ marginTop: "13px" }}><Link to="/depositos"><i class="fas fa-user-plus mr-1"></i>Registrar usuario</Link></li>
                     <li style={{ marginTop: "13px" }}><Link to="/depositos"><i class="fas fa-file-medical mr-1"></i>Subir documentos</Link></li>
                     <li style={{ marginTop: "13px" }}><Link to="/logout"><i class="fas fa-power-off mr-2"></i>Logout</Link></li>

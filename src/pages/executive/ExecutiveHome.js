@@ -1,8 +1,8 @@
 import React from 'react'
-import NavbarExecutive from '../../userTipes/executive/NavbarExecutive';
-import Contracts from '../../contracts/Contracts';
+import NavbarExecutive from '../../components/userTipes/executive/NavbarExecutive';
+import Contracts from '../../components/userTipes/user/contracts/Contracts';
 import styled from 'styled-components';
-import { Layout } from '../../bootstrap/Layout';
+import { Layout } from '../../components/bootstrap/Layout';
 
 const Styles = styled.div`
     .grid-2 {

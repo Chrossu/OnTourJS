@@ -1,8 +1,7 @@
 import React from 'react'
 import { Form, Button } from 'react-bootstrap';
-import { Layout } from '../../bootstrap/Layout';
-import { } from 'react-router-dom';
-import { NavigationBar } from '../../landpage/Navigation';
+import { Layout } from '../../components/bootstrap/Layout';
+import { NavigationBar } from '../../components/landpage/Navigation';
 import { Link } from 'react-router-dom';
 
 const Login = () => {

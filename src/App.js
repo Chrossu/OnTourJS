@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Home } from './components/pages/landpage/Home';
-import { NoMatch } from './components/pages/NoMatch';
-import Login from './components/pages/landpage/Login';
-import UserHome from './components/pages/user/UserHome';
-import ExecutiveHome from './components/pages/executive/ExecutiveHome';
-import InfoContratos from './components/contracts/InfoContratos';
+import { Home } from './pages/landpage/Home';
+import { NoMatch } from './pages/NoMatch';
+import Login from './pages/landpage/Login';
+import UserHome from './pages/user/UserHome';
+import ExecutiveHome from './pages/executive/ExecutiveHome';
+import InfoContratos from './components/userTipes/user/contracts/InfoContratos';
 import ContractState from './context/contract/ContractState';
+import ExecutiveAddContract from './pages/executive/ExecutiveAddContract';
 
 const App = () => {
   return (
@@ -17,8 +18,9 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/users' component={UserHome} />
-            <Route exact path='/executive' component={ExecutiveHome} />
+            <Route exact path='/ejecutivo' component={ExecutiveHome} />
             <Route exact path='/info-contratos' component={InfoContratos} />
+            <Route exact path='/agregar-contrato' component={ExecutiveAddContract} />
             <Route component={NoMatch} />
           </Switch>
         </React.Fragment>

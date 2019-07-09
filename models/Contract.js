@@ -9,6 +9,14 @@ const ContractSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  description: {
+    type: String,
+    required: true
+  },
+  insurance: {
+    type: boolean,
+    required: true
+  },
   totalAmount: {
     type: Number,
     required: true

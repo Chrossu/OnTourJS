@@ -48,6 +48,14 @@ const Styles = styled.div`
     .color-verde {
         color: rgb(36, 151, 88);
     }
+
+    .color-azul {
+        color: var(--primary-color);
+    }
+
+    strong {
+        color: var(--primary-color);
+    }
 }
 `;
 
@@ -67,7 +75,7 @@ const { name, currentAmount, totalAmount } = contract;
                 </h3>
                 <ul>
                     <li><i class="fas fa-money-bill mr-2 color-verde"></i>Monto total paquete: ${numberWithCommas(totalAmount)}</li>
-                    <li><i class="fas fa-crosshairs" style={{ marginRight: "13px", marginTop: "8px" }}></i>Monto <strong>actual</strong> paquete: ${numberWithCommas(currentAmount)}</li>
+                    <li><i class="fas fa-crosshairs color-azul" style={{ marginRight: "13px", marginTop: "8px" }}></i>Monto <strong>actual</strong> paquete: ${numberWithCommas(currentAmount)}</li>
                 </ul>
                 <Button variant="outline-success">Depositar</Button>
                 <Button variant="outline-primary">Revisar</Button>
