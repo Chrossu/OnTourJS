@@ -2,6 +2,7 @@ import React from 'react'
 import NavbarUser from '../layout/NavbarUser';
 import Contracts from '../contracts/Contracts';
 import styled from 'styled-components';
+import { Layout } from '../bstrap/Layout';
 
 const Styles = styled.div`
     .grid-2 {
@@ -13,18 +14,36 @@ const Styles = styled.div`
     body {
         background-color: #fff!important;
     }
+    
+    h1 {
+        color: rgb(80, 80, 100);
+        margin-bottom: 2rem;
+    }
+
+    .container {
+        max-width: 1600px;
+    }
+
+    .divm {
+        width: 1000px;
+    }
 `;
 
 const UserHome = () => {
     return (
         <Styles>
-            <NavbarUser />
+        <NavbarUser />
+        <Layout>
             <div className="grid-2">
-                <div></div>
+                <div className="divm">
+                <h1 className="lead display-4 text-center">Información general</h1>
+                </div>
                 <div>
+                    <h1 className="lead display-4 text-center">Contratos activos</h1>
                     <Contracts />
                 </div>
             </div>
+        </Layout>
         </Styles>
     )
 }

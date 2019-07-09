@@ -68,8 +68,8 @@ const NavbarUser = () => {
                 <ul className="align">
                     <li style={{ marginTop: "13px" }}><Link to="/users">Home</Link></li>
                     <li style={{ marginTop: "13px" }}><Link to="/contratos">Contratos</Link></li>
-                    <li style={{ marginTop: "13px" }}><Link to="/depositos">Realizar depósitos</Link></li>
-                    <li style={{ marginTop: "13px" }}><Link to="/logout">Cerrar sesión</Link></li>
+                    <li style={{ marginTop: "13px" }}><Link to="/depositos">Depósitar</Link></li>
+                    <li style={{ marginTop: "13px" }}><Link to="/logout">Logout</Link></li>
                 </ul>
             </div>
         </Styles>

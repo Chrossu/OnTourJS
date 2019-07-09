@@ -1,11 +1,32 @@
+.pruebasssssssssssss {
+    color: rgb(36, 151, 88);
+    color: #636363;
+}
+
+/* Global Styles */
+:root {
+    --primary-color: #003699;
+    --dark-color: #333333;
+    --light-color: #f4f4f4;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+  }
+
 .navbar a:hover {
     color: var(#f4f4f4);
 }
+
+
 
 span {
     display: inline-block;
     vertical-align: middle;
 }
+
+ul {
+    list-style: none;
+    padding: 0;
+  }
 
 body {
     background-color: rgb(241, 241, 241);
@@ -34,9 +55,6 @@ body {
     margin-bottom: 10px;
 }
 
-.pruebasssssssssssss {
-    color: rgb(223, 223, 223);
-}
 
 .back-presentacion {
     background-image: url('./assets/back-presentacion.jpg');
