@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 
 const Carta = (props) => {
-    return (<Card style={{ width: '18rem' }}>
+    return (<Card className="mb-3" style={{ width: '18rem'}}>
         <Card.Img roundedCircle variant="top" src={props.imagen} />
         <Card.Body>
             <Card.Title>{props.titulo}</Card.Title>

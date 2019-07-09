@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const ContractSchema = mongoose.Schema({
-  user: {
+const GradeSchema = mongoose.Schema({
+  users: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'users'
   },
-  name: {
+  schoolName: {
     type: String,
     required: true
   },
@@ -15,12 +15,8 @@ const ContractSchema = mongoose.Schema({
   },
   currentAmount: {
     type: Number,
-    default: 0
-  },
-  date: {
-    type: Date,
-    default: Date.now
+    required: true
   }
 })
 
-module.exports = mongoose.model('contract', ContractSchema);
+module.exports = mongoose.model('grade', GradeSchema);

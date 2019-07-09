@@ -7,7 +7,7 @@ import logo from '../../assets/logo.png';
 const Styles = styled.div`
   .navbar {
       background-color: rgba(0,0,0,0.6);
-      height: 65px;
+      height: 72px;
       position: absolute;
       top: 0px;
       left: 0px;
@@ -58,6 +58,10 @@ export const NavigationBar = () => (
                     <div className="separador"></div>
                     <Nav.Item>
                         <Nav.Link><Link to="/contact" className="lead">Catálogos turísticos</Link></Nav.Link>
+                    </Nav.Item>
+                    <div className="separador"></div>
+                    <Nav.Item>
+                        <Nav.Link><Link to="/contact" className="lead">Contáctanos</Link></Nav.Link>
                     </Nav.Item>
                     <div className="separador"></div>
                     <Nav.Item>

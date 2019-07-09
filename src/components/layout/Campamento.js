@@ -684,7 +684,7 @@ tlbearBlink.to(bearEyes, .2, {opacity: 1})
         <Styled>
           <div className='container'>
             <div className="texto text-center">
-              <h1 className="display-2" style={{marginBottom: '26px'}}>On Tour</h1>
+              <h1 className="display-2" style={{ marginBottom: '26px' }}>On Tour</h1>
               <h2 id="titulo">¿Qué esperas para viajar con nosotros?</h2>
                 <p>Contáctate con uno de nuestros ejecutivos de ventas para realizar la compra de tu paquete turístos. Contamos con distintas variedades de opciones de viajes: disfruta de aventuras tanto nacionales como internacionales.</p>
               <Button variant="outline-light">Fono: (2) 4772 9981</Button>

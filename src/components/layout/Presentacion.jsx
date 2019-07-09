@@ -38,21 +38,21 @@ export const Presentacion = () => (
                 <h1>Líderes en paquetes turísticos</h1>
                 <p className="lead mb-4">Llevamos más de 20 años dedicandonos a ofrecer paquetes turísticos tanto internacionales como nacionales, ofreciendo así los mejores precios y servicios dentro del mercado. Para nuestra agencia, la seguridad es lo primero: es por esto que contamos con una serie de medidas y precauciones para la tranquilidad de nuestros usuarios, logrando así la tranquilidad de nuestros usuarios al disfrutar de sus viajes.</p>
                 <Row>
-                    <Col xs={12} sm={4}>
+                    <Col xs={12} sm={8} lg={4}>
                         <Carta
                             imagen={rioJaneiro}
                             titulo='Viajes'
                             descripcion='Nuestros destinos abarcan los lugares más hermosos de nuestro planeta. ¡Entérate de nuestras mejores promociones disponibles antes que se agoten!'
                         />
                     </Col>
-                    <Col xs={12} sm={4}>
+                    <Col xs={12} sm={8} lg={4}>
                         <Carta
                             imagen={entretencion}
                             titulo='Aventuras'
                             descripcion='Nuestros paquetes turísticos cuentan con increíbles actividades para realizar en comunidad: desde paseos en Kayak hasta saltos en bungee.'
                         />
                     </Col>
-                    <Col xs={12} sm={4}>
+                    <Col xs={12} sm={8} lg={4}>
                         <Carta
                             imagen={recuerdos}
                             titulo='Recuerdos'
