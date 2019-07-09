@@ -50,11 +50,11 @@ const Styles = styled.div`
     }
 
     .color-azul {
-        color: var(--primary-color);
+        color: #2796fd;
     }
 
     strong {
-        color: var(--primary-color);
+        color: #007bff;
     }
 }
 `;

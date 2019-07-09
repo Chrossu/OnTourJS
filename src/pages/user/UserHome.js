@@ -16,7 +16,7 @@ const Styles = styled.div`
     }
     
     h1 {
-        color: rgb(80, 80, 100);
+        color: var(--primary-color);
         margin-bottom: 2rem;
     }
 
@@ -36,10 +36,10 @@ const UserHome = () => {
         <Layout>
             <div className="grid-2">
                 <div className="divm">
-                <h1 className="lead display-4 text-center">Información general</h1>
+                <h1 className="lead text-center"><strong>Información general</strong></h1>
                 </div>
                 <div>
-                    <h1 className="lead display-4 text-center">Contratos activos</h1>
+                    <h1 className="lead text-center"><strong>Contratos activos</strong></h1>
                     <Contracts />
                 </div>
             </div>
