@@ -62,7 +62,7 @@ const { name, currentAmount, totalAmount } = contract;
         <Styles>
             <div className="carta bg-lighto">
                 <div>
-                <h3 className="text-primario" style={{ marginBottom: "20px" }}>
+                <h3 className="text-primario text-center" style={{ marginBottom: "20px" }}>
                     {name}
                 </h3>
                 <ul>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row, Image, Jumbotron } from 'react-bootstrap';
-import { Layout } from '../bstrap/Layout'
+import { Layout } from '../bootstrap/Layout'
 import tokyo from '../../assets/destinos/tokyo.jpg';
 import bariloche from '../../assets/destinos/bariloche.jpg';
 import noruega from '../../assets/destinos/noruega.jpg';
@@ -16,7 +16,7 @@ const Styles = styled.div`
   }
   
   p {
-      color: #efefef;
+    color: #efefef;
   }
 
   h3 {

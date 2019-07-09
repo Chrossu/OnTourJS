@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Jumbotron, Button } from 'react-bootstrap';
-import { Layout } from '../bstrap/Layout';
+import { Layout } from '../bootstrap/Layout';
 import { Back, TimelineMax } from 'gsap';
 
 const Styled = styled.div`
@@ -11,7 +11,7 @@ const Styled = styled.div`
     color: #ffffff;
     margin-left: 790px;
   }
-
+ 
   #titulo {
     white-space: nowrap;
   }
@@ -678,6 +678,7 @@ tlbearBlink.to(bearEyes, .2, {opacity: 1})
   const estiloOverflow = {
     overflow: 'visible'
   };
+  
   return (
     <Jumbotron className="back-campamento">
       <Layout>

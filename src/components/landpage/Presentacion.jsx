@@ -4,10 +4,10 @@ import { Jumbotron, Row, Col } from 'react-bootstrap';
 import rioJaneiro from '../../assets/destinos/rioJaneiro.jpg';
 import entretencion from '../../assets/entretencion.jpg'
 import recuerdos from '../../assets/recuerdos.jpg';
-import { Layout } from '../bstrap/Layout';
-import Carta from '../bstrap/Carta';
+import { Layout } from '../bootstrap/Layout';
+import Carta from '../bootstrap/Carta';
 
-const Styles = styled.div`  
+const Styles = styled.div`   
   h1 {
     color: #e5e5e5;
     margin-bottom: 35px;

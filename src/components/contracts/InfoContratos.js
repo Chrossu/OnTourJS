@@ -1,5 +1,5 @@
 import React from 'react'
-import NavbarUser from './NavbarUser';
+import NavbarUser from '../userTipes/user/NavbarUser';
 
 const InfoContratos = () => {
     return (

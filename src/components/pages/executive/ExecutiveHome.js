@@ -1,8 +1,8 @@
 import React from 'react'
-import NavbarUser from '../layout/NavbarUser';
-import Contracts from '../contracts/Contracts';
+import NavbarExecutive from '../../userTipes/executive/NavbarExecutive';
+import Contracts from '../../contracts/Contracts';
 import styled from 'styled-components';
-import { Layout } from '../bstrap/Layout';
+import { Layout } from '../../bootstrap/Layout';
 
 const Styles = styled.div`
     .grid-2 {
@@ -32,7 +32,7 @@ const Styles = styled.div`
 const UserHome = () => {
     return (
         <Styles>
-        <NavbarUser />
+        <NavbarExecutive />
         <Layout>
             <div className="grid-2">
                 <div className="divm">
