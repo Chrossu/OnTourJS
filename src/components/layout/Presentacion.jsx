@@ -33,10 +33,10 @@ const Styles = styled.div`
 
 export const Presentacion = () => (
     <Styles>
-        <Jumbotron className="text-center back-presentacion jumbo pt-3">
+        <Jumbotron className="text-center back-presentacion jumbo pt-3 noaf">
             <Layout>
-                <h1>Líderes en paquetes turísticos</h1>
-                <p className="lead mb-4">Llevamos más de 20 años dedicandonos a ofrecer paquetes turísticos tanto internacionales como nacionales, ofreciendo así los mejores precios y servicios dentro del mercado. Para nuestra agencia, la seguridad es lo primero: es por esto que contamos con una serie de medidas y precauciones para la tranquilidad de nuestros usuarios, logrando así la tranquilidad de nuestros usuarios al disfrutar de sus viajes.</p>
+                <h1 className="noafi">Líderes en paquetes turísticos</h1>
+                <p className="lead mb-4 noafi">Llevamos más de 20 años dedicandonos a ofrecer paquetes turísticos tanto internacionales como nacionales, ofreciendo así los mejores precios y servicios dentro del mercado. Para nuestra agencia, la seguridad es lo primero: es por esto que contamos con una serie de medidas y precauciones para la tranquilidad de nuestros usuarios, logrando así la tranquilidad de nuestros usuarios al disfrutar de sus viajes.</p>
                 <Row>
                     <Col xs={12} sm={8} lg={4}>
                         <Carta
@@ -56,7 +56,7 @@ export const Presentacion = () => (
                         <Carta
                             imagen={recuerdos}
                             titulo='Recuerdos'
-                            descripcion='Reforza los lazos con tus seres queridos en las diversas aventuras y actividades que ofrecemos para ti y tus amigos. ¿Qué esperas para viajar con nosotros?'
+                            descripcion='Refuerza los lazos con tus seres queridos en las diversas aventuras y actividades que ofrecemos para ti y tus amigos. ¿Qué esperas para viajar con nosotros?'
                         />
                     </Col>
                 </Row>

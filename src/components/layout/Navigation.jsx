@@ -43,29 +43,30 @@ export const NavigationBar = () => (
                     width="164"
                     height="59"
                     alt="Logo OnTour"
+                    className="noafi"
                 />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
                     <Nav.Item>
-                        <Nav.Link><Link to="/" className="lead">Inicio</Link></Nav.Link>
+                        <Nav.Link><Link to="/" className="lead noafi">Inicio</Link></Nav.Link>
                     </Nav.Item>
                     <div className="separador"></div>
                     <Nav.Item>
-                        <Nav.Link><Link to="/about" className="lead">Sobre nosotros</Link></Nav.Link>
+                        <Nav.Link><Link to="/about" className="lead noafi">Sobre nosotros</Link></Nav.Link>
                     </Nav.Item>
                     <div className="separador"></div>
                     <Nav.Item>
-                        <Nav.Link><Link to="/contact" className="lead">Catálogos turísticos</Link></Nav.Link>
+                        <Nav.Link><Link to="/contact" className="lead noafi">Catálogos turísticos</Link></Nav.Link>
                     </Nav.Item>
                     <div className="separador"></div>
                     <Nav.Item>
-                        <Nav.Link><Link to="/contact" className="lead">Contáctanos</Link></Nav.Link>
+                        <Nav.Link><Link to="/contact" className="lead noafi">Contáctanos</Link></Nav.Link>
                     </Nav.Item>
                     <div className="separador"></div>
                     <Nav.Item>
-                        <Nav.Link><Link to="/login" className="lead marg-left"><strong>Iniciar sesión</strong></Link></Nav.Link>
+                        <Nav.Link><Link to="/login" className="lead marg-left noafi"><strong>Iniciar sesión</strong></Link></Nav.Link>
                     </Nav.Item>
                 </Nav>
             </Navbar.Collapse>

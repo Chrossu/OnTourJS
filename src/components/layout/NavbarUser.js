@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import logo from '../../assets/logo.png'
 
 const Styles = styled.div`
     .navbar {
@@ -57,7 +58,13 @@ const NavbarUser = () => {
     return (
         <Styles>
             <div className="navbar bg-primary">
-                <h1><i class="fas fa-umbrella-beach mr-2" />On Tour</h1>
+                <img
+                    src={logo}
+                    width="164"
+                    height="59"
+                    alt="Logo OnTour"
+                    className="noafi"
+                />
                 <ul className="align">
                     <li style={{ marginTop: "13px" }}><Link to="/users">Home</Link></li>
                     <li style={{ marginTop: "13px" }}><Link to="/contratos">Contratos</Link></li>

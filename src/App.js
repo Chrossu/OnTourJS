@@ -5,11 +5,13 @@ import { NoMatch } from './components/pages/NoMatch';
 import Login from './components/pages/Login';
 import UserHome from './components/pages/UserHome';
 import InfoContratos from './components/layout/InfoContratos';
+import ContractState from './context/contract/ContractState';
 
-function App() {
+const App = () => {
   return (
-    <React.Fragment>
-        <Router>
+    <ContractState>
+      <Router>
+        <React.Fragment>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path='/login' component={Login} />
@@ -17,9 +19,9 @@ function App() {
             <Route exact path='/info-contratos' component={InfoContratos} />
             <Route component={NoMatch} />
           </Switch>
-        </Router>
-    </React.Fragment>
-
+        </React.Fragment>
+      </Router>
+    </ContractState>
   );
 }
 

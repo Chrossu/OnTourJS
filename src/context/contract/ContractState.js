@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import uuid from 'uuid';
-import contractContext from './contractContext';
+import ContractContext from './contractContext';
 import contractReducer from './contractReducer';
 import {
     ADD_CONTRACT,
@@ -30,7 +30,39 @@ const ContractState = (props) => {
                 name: 'Japón',
                 currentAmount: 32000,
                 totalAmount: 3000000,
-            },
+            }
         ]
     }
+
+    const [state, dispatch] = useReducer(contractReducer, initialState);
+
+    // Add contract
+
+
+    // Delete contract
+
+
+    // Set current contract
+
+
+    // Clear current contract
+
+
+    // Update contract
+
+
+    // Filter contracts
+
+
+    // Clear filter
+
+    return (
+        <ContractContext.Provider value={{
+            contracts: state.contracts
+        }}>
+            {props.children}
+        </ContractContext.Provider>
+    )
 }
+
+export default ContractState;
