@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { Row, Button, Col, Form } from 'react-bootstrap';
 import styled from 'styled-components'
 import { Layout } from '../../components/bootstrap/Layout';
@@ -68,7 +68,17 @@ const Styles = styled.div`
 
 const Deposit = () => {
     const contractContext = useContext(ContractContext);
-    const { contracts } = contractContext;
+    const { contracts, current, clearCurrent, updateContract } = contractContext;
+    const montoRef = useRef(null);
+
+    const onSubmit = e => {
+        e.preventDefault();
+        updateContract(current.id, montoRef.current.value)
+        setTimeout(() => {
+            clearCurrent();
+        }, 20);
+    }
+
     return (
         <React.Fragment>
             <NavbarUser />
@@ -79,29 +89,29 @@ const Deposit = () => {
                 </div>
                 <Layout>
                     <div className="divm bg-lighto bordecito">
-                        <Form>
+                        <Form onSubmit={onSubmit}>
                             <Row>
                                 <Col>
-                                    <p className="p"><i className="fas fa-key mr-3" /><strong>ID Contrato: </strong></p><Form.Control className="diswidth" plaintext readOnly defaultValue="No seleccionado" />
+                                    <p className="p"><i className="fas fa-key mr-3" /><strong>ID Contrato: </strong></p><Form.Control className="diswidth" plaintext readOnly value={current.id}></Form.Control>
                                 </Col>
                                 <Col>
-                                    <p className="p"><i className="fas fa-umbrella-beach mr-3" /><strong>Destino: </strong></p><Form.Control className="diswidth mb-4" plaintext readOnly defaultValue="No seleccionado" />
+                                    <p className="p"><i className="fas fa-umbrella-beach mr-3" /><strong>Destino: </strong></p><Form.Control className="diswidth mb-4" plaintext readOnly value={current.name} />
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <p className="p"><i style={{ marginRight: "10px" }} className="fas fa-money-bill color-verde" /><strong>Monto actual: </strong></p><Form.Control className="diswidth" plaintext readOnly defaultValue="0" />
+                                    <p className="p"><i style={{ marginRight: "10px" }} className="fas fa-money-bill color-verde" /><strong>Monto actual: </strong></p><Form.Control className="diswidth" plaintext readOnly value={current.currentAmount} />
                                 </Col>
                                 <Col>
-                                    <p className="p"><i style={{ marginRight: "23px" }} className="fas fa-crosshairs color-azul" /><strong>Monto total: </strong></p><Form.Control className="diswidth mb-4" plaintext readOnly defaultValue="0" />
+                                    <p className="p"><i style={{ marginRight: "23px" }} className="fas fa-crosshairs color-azul" /><strong>Monto total: </strong></p><Form.Control className="diswidth mb-4" plaintext readOnly value={current.totalAmount} />
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <Form.Control type="number" placeholder="Monto a depositar" />
+                                    <Form.Control type="number" ref={montoRef} placeholder="Monto a depositar" />
                                 </Col>
                                 <Col>
-                                    <Button className="centro2" variant="outline-success">Depositar</Button>
+                                    <Button className="centro2" type="submit" variant="outline-success" >Depositar</Button>
                                 </Col>
                             </Row>
                         </Form>

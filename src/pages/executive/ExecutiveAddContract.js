@@ -29,6 +29,7 @@ const ExecutiveAddContract = () => {
             insurance: false
         })
     }
+    
     return (
         <div>
             <NavbarExecutive />

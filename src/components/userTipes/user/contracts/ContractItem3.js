@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
 import { Button } from 'react-bootstrap';
+import ContractContext from '../../../../context/contract/contractContext';
 import { Link } from 'react-router-dom'
 
 const Styles = styled.div`
@@ -65,20 +66,22 @@ function numberWithCommas(x) {
 }
 
 const ContractItem = ({ contract }) => {
-const { name, currentAmount, totalAmount } = contract;
+    const contractContext = useContext(ContractContext);
+    const { setCurrent } = contractContext;
+    const { name, currentAmount, totalAmount } = contract;
 
     return (
         <Styles>
             <div className="carta bg-lighto">
                 <div>
-                <h3 className="text-primario text-center" style={{ marginBottom: "20px" }}>
-                    {name}
-                </h3>
-                <ul>
-                    <li className="text-center"><i className="fas fa-money-bill mr-2 color-verde"></i>Monto total paquete: ${numberWithCommas(totalAmount)}</li>
-                    <li className="text-center"><i className="fas fa-crosshairs color-azul" style={{ marginRight: "7px", marginTop: "8px" }}></i>Monto <strong>actual</strong> paquete: ${numberWithCommas(currentAmount)}</li>
-                </ul>
-                <Button style={{ width: "100%" }} variant="outline-primary">Seleccionar</Button>
+                    <h3 className="text-primario text-center" style={{ marginBottom: "20px" }}>
+                        {name}
+                    </h3>
+                    <ul>
+                        <li className="text-center"><i className="fas fa-money-bill mr-2 color-verde"></i>Monto total paquete: ${numberWithCommas(totalAmount)}</li>
+                        <li className="text-center"><i className="fas fa-crosshairs color-azul" style={{ marginRight: "7px", marginTop: "8px" }}></i>Monto <strong>actual</strong> paquete: ${numberWithCommas(currentAmount)}</li>
+                    </ul>
+                    <Button style={{ width: "100%" }} variant="outline-primary" onClick={() => setCurrent(contract)}>Seleccionar</Button>
                 </div>
             </div>
         </Styles>

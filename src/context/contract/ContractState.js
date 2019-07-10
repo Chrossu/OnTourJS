@@ -4,7 +4,6 @@ import ContractContext from './contractContext';
 import contractReducer from './contractReducer';
 import {
     ADD_CONTRACT,
-    DELETE_CONTRACT,
     UPDATE_CONTRACT,
     SET_CURRENT,
     CLEAR_CURRENT
@@ -41,13 +40,18 @@ const ContractState = (props) => {
                 date: '04/07/2019'
             }
         ],
-        current: null
+        current: {
+            id: 'Sin seleccionar',
+            name: 'Sin seleccionar',
+            currentAmount: 0,
+            totalAmount: 0
+        }
     }
 
     const [state, dispatch] = useReducer(contractReducer, initialState);
 
     // Add contract
-    const addContract = (contract) => {
+    const addContract = contract => {
         contract.id = uuid.v4();
         dispatch({ type: ADD_CONTRACT, payload: contract });
     }
@@ -56,13 +60,26 @@ const ContractState = (props) => {
 
 
     // Set current contract
-
+    const setCurrent = contract => {
+        dispatch({ type: SET_CURRENT, payload: contract })
+    };
 
     // Clear current contract
-
+    const clearCurrent = contract => {
+        dispatch({ type: CLEAR_CURRENT, payload: {
+            current: {
+                id: 'Sin seleccionar',
+                name: 'Sin seleccionar',
+                currentAmount: 0,
+                totalAmount: 0
+            }
+        } })
+    };
 
     // Update contract
-
+    const updateContract = (id, amount) => {
+        dispatch({ type: UPDATE_CONTRACT, payload: id, amount })
+    };
 
     // Filter contracts
 
@@ -72,7 +89,11 @@ const ContractState = (props) => {
     return (
         <ContractContext.Provider value={{
             contracts: state.contracts,
-            addContract
+            current: state.current,
+            addContract,
+            setCurrent,
+            clearCurrent,
+            updateContract
         }}>
             {props.children}
         </ContractContext.Provider>

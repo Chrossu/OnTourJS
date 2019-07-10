@@ -34,7 +34,7 @@ const Styles = styled.div`
     }
 
     .bordecito {
-        border: 2px solid gray;
+        border: 1px solid gray;
         border-radius: 10px;
         padding: 20px;
     }
