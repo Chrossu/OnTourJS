@@ -9,6 +9,7 @@ import InfoContratos from './components/userTipes/user/contracts/InfoContratos';
 import ContractState from './context/contract/ContractState';
 import ExecutiveAddContract from './pages/executive/ExecutiveAddContract';
 import ListContracts from './pages/user/ListContracts';
+import Deposit from './pages/user/Deposit';
 
 const App = () => {
   return (
@@ -16,13 +17,17 @@ const App = () => {
       <Router>
         <React.Fragment>
           <Switch>
+            {/* Landing page pages */}
             <Route exact path="/" component={Home} />
             <Route exact path='/login' component={Login} />
-            <Route exact path='/users' component={UserHome} />
+            {/* User pages */}
+            <Route exact path='/user' component={UserHome} />
+            <Route exact path='/user/contratos' component={InfoContratos} />
+            <Route exact path='/user/lista-contratos' component={ListContracts} />
+            <Route exact path='/user/depositar' component={Deposit} />
+            {/* Executive pages */}
             <Route exact path='/ejecutivo' component={ExecutiveHome} />
-            <Route exact path='/info-contratos' component={InfoContratos} />
-            <Route exact path='/agregar-contrato' component={ExecutiveAddContract} />
-            <Route exact path='/lista-contratos' component={ListContracts} />
+            <Route exact path='/ejecutivo/agregar-contrato' component={ExecutiveAddContract} />
             <Route component={NoMatch} />
           </Switch>
         </React.Fragment>

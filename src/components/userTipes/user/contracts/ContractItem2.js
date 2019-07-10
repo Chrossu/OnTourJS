@@ -12,9 +12,6 @@ const Styles = styled.div`
 
     .bg-lighto {
         border: #ccc solid 1px;
-    }
-
-    .bg-lighto {
         background: rgb(216, 216, 216);
         color: #fff;
     }
@@ -82,7 +79,7 @@ const ContractItem = ({ contract }) => {
                     </h3>
                     <ul>
                         <li><i className="fas fa-money-bill mr-3 color-verde"></i>Monto <strong className="color-verde">total</strong> paquete: ${numberWithCommas(totalAmount)}</li>
-                        <li><i className="fas fa-crosshairs color-azul" style={{ marginRight: "20px", marginTop: "8px" }}></i>Monto <strong>actual</strong> paquete: ${numberWithCommas(currentAmount)}</li>
+                        <li><i className="fas fa-crosshairs color-azul" style={{ marginRight: "20px", marginTop: "8px" }}/>Monto <strong>actual</strong> paquete: ${numberWithCommas(currentAmount)}</li>
                         <li><i className="fas fa-umbrella-beach mr-3" />Descripción: {description}</li>
                         <li><i className="fas fa-car-crash mr-3"></i>¿Asegurado? {insurance === true ? <Badge variant="success">Asegurado</Badge> : <Badge variant="danger">No asegurado</Badge>}</li>
                         <li><i className="fas fa-calendar-day mr-4" />Fecha de creación: {date}</li>

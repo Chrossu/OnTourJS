@@ -40,7 +40,8 @@ const ContractState = (props) => {
                 insurance: false,
                 date: '04/07/2019'
             }
-        ]
+        ],
+        current: null
     }
 
     const [state, dispatch] = useReducer(contractReducer, initialState);

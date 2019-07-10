@@ -8,6 +8,7 @@ const Styles = styled.div`
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 2rem;
+        padding: 0px;
     }
 
     body {
@@ -26,8 +27,6 @@ const Styles = styled.div`
     .divm {
         width: 1000px;
     }
-
-
 `;
 
 const ExecutiveHome = () => {
