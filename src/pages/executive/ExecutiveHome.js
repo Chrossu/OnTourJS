@@ -1,6 +1,5 @@
 import React from 'react'
 import NavbarExecutive from '../../components/userTipes/executive/NavbarExecutive';
-import Contracts from '../../components/userTipes/user/contracts/Contracts';
 import styled from 'styled-components';
 import { Layout } from '../../components/bootstrap/Layout';
 
@@ -17,7 +16,7 @@ const Styles = styled.div`
     
     h1 {
         color: rgb(80, 80, 100);
-        margin-bottom: 2rem;
+        margin-bottom: 10px;
     }
 
     .container {
@@ -27,25 +26,22 @@ const Styles = styled.div`
     .divm {
         width: 1000px;
     }
+
+
 `;
 
-const UserHome = () => {
+const ExecutiveHome = () => {
     return (
         <Styles>
         <NavbarExecutive />
         <Layout>
-            <div className="grid-2">
-                <div className="divm">
-                <h1 className="lead display-4 text-center">Información general</h1>
-                </div>
-                <div>
-                    <h1 className="lead display-4 text-center">Contratos activos</h1>
-                    <Contracts />
-                </div>
+            <div>
+                <h1 className="display-4 lead text-center">¡Bienvenido!</h1>
+                <p className="lead text-center">¿Qué deseas hacer?</p>
             </div>
         </Layout>
         </Styles>
     )
 }
 
-export default UserHome
+export default ExecutiveHome;

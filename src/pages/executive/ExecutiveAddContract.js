@@ -1,26 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import NavbarExecutive from '../../components/userTipes/executive/NavbarExecutive';
 import { Layout } from '../../components/bootstrap/Layout';
+import ContractContext from '../../context/contract/contractContext';
 
 const ExecutiveAddContract = () => {
+    const contractContext = useContext(ContractContext);
     const [contract, setContract] = useState({
         user: '',
         name: '',
         description: '',
-        totalAmount: ''
+        totalAmount: '',
+        insurance: false
     });
 
-    const { user, name, description, totalAmount,  } = contract;
+    const { user, description, totalAmount, insurance } = contract;
 
     const onChange = e => setContract({ ...contract, [e.target.name]: e.target.value });
 
+    const onSubmit = e => {
+        e.preventDefault();
+        contractContext.addContract(contract);
+        setContract({
+            user: '',
+            name: '',
+            description: '',
+            totalAmount: '',
+            insurance: false
+        })
+    }
     return (
         <div>
             <NavbarExecutive />
             <Layout>
                 <h1 className="lead display-4 text-center pb-4">Registro de contrato</h1>
-                <Form>
+                <Form onSubmit={onSubmit}>
 
                     {/* //--------- ID user */}
                     <Form.Group controlId="exampleForm.ControlInput1">
@@ -31,38 +45,40 @@ const ExecutiveAddContract = () => {
                     {/* //--------- Travel destination */}
                     <Form.Group controlId="exampleForm.ControlSelect1">
                         <Form.Label>Lugar de destino</Form.Label>
-                        <Form.Control as="select" onChange={onChange}>
-                        <option disabled value="Sin seleccionar">Seleccione un destino</option>
-                            <option name="name" value="Cancún, México">Cancún, México</option>
-                            <option name="name" value="Bariloche, Argentina">Bariloche, Argentina</option>
-                            <option name="name" value="Torres del Paine, Chile">Torres del Paine, Chile</option>
-                            <option name="name" value="Bali, Indonesia">Bali, Indonesia</option>
-                            <option name="name" value="Reine, Noruega">Reine, Noruega</option>
-                            <option name="name" value="Tokyo, Japón">Tokyo, Japón</option>
+                        <Form.Control as="select" name="name" onChange={onChange}>
+                            <option disabled selected value="Sin seleccionar">Seleccione un destino</option>
+                            <option value="Cancún, México">Cancún, México</option>
+                            <option value="Bariloche, Argentina">Bariloche, Argentina</option>
+                            <option value="Torres del Paine, Chile">Torres del Paine, Chile</option>
+                            <option value="Bali, Indonesia">Bali, Indonesia</option>
+                            <option value="Reine, Noruega">Reine, Noruega</option>
+                            <option value="Tokyo, Japón">Tokyo, Japón</option>
                         </Form.Control>
                     </Form.Group>
 
                     {/* //--------- Travel description */}
                     <Form.Group controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Descripción de modalidad de viaje</Form.Label>
-                        <Form.Control as="textarea" rows="3" type="text" placeholder="Descripción del paquete" name="description" value={description} onChange={onChange}/>
+                        <Form.Control as="textarea" rows="3" type="text" placeholder="Descripción del paquete" name="description" value={description} onChange={onChange} />
                     </Form.Group>
 
-                    {/* //--------- Total Amount of travel */}
+                    {/* //--------- Total amount of travel */}
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Label>Valor total del paquete</Form.Label>
                         <Form.Control type="number" placeholder="Monto del contrato (ingrese solo números)" name="totalAmount" value={totalAmount} onChange={onChange} />
                     </Form.Group>
 
                     {/* //--------- Insurance checker */}
-                    {['checkbox'].map(type => (
-                        <Form.Check 
+                    <Form.Check
                         className="mb-4"
-                        type={type}
-                        id={`default-${type}`}
-                        label="¿Agregar seguro al contrato?"
-                      />
-                    ))}
+                        type="checkbox" 
+                        defaultChecked={false}
+                        name="insurance"                        
+                        onClick={insurance === true}
+                        onChange={onChange}
+                        label="¿Agregar seguro al contrato?"                        
+                    />
+                    
 
                     {/* //--------- Buttons */}
                     <Button className="mr-3" variant="info" type="submit">Ingresar contrato</Button>

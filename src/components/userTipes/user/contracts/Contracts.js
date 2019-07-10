@@ -1,14 +1,12 @@
 import React, { useContext } from 'react'
-import ContractContext from '../../../../context/contract/contractContext';
 import ContractItem from '../contracts/ContractItem';
 
-const Contracts = () => {
-    const contractContext = useContext(ContractContext);
-    const { contracts } = contractContext;
+
+const Contracts = (props) => {
     
     return (
         <React.Fragment>
-            {contracts.map(contract => <ContractItem key={contract.id} contract={contract} />)}
+            {props.contracts.map(contract => <ContractItem key={contract.id} contract={contract} />)}
         </React.Fragment>
     )
 }

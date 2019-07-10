@@ -74,8 +74,8 @@ const { name, currentAmount, totalAmount } = contract;
                     {name}
                 </h3>
                 <ul>
-                    <li><i class="fas fa-money-bill mr-2 color-verde"></i>Monto total paquete: ${numberWithCommas(totalAmount)}</li>
-                    <li><i class="fas fa-crosshairs color-azul" style={{ marginRight: "13px", marginTop: "8px" }}></i>Monto <strong>actual</strong> paquete: ${numberWithCommas(currentAmount)}</li>
+                    <li><i className="fas fa-money-bill mr-2 color-verde"></i>Monto total paquete: ${numberWithCommas(totalAmount)}</li>
+                    <li><i className="fas fa-crosshairs color-azul" style={{ marginRight: "13px", marginTop: "8px" }}></i>Monto <strong>actual</strong> paquete: ${numberWithCommas(currentAmount)}</li>
                 </ul>
                 <Button variant="outline-success">Depositar</Button>
                 <Button variant="outline-primary">Revisar</Button>

@@ -1,6 +1,7 @@
-import React from 'react'
-import NavbarUser from '../../components/userTipes/user/NavbarUser';
+import React, { useContext } from 'react'
+import ContractContext from '../../context/contract/contractContext';
 import Contracts from '../../components/userTipes/user/contracts/Contracts';
+import NavbarUser from '../../components/userTipes/user/NavbarUser';
 import styled from 'styled-components';
 import { Layout } from '../../components/bootstrap/Layout';
 
@@ -30,6 +31,9 @@ const Styles = styled.div`
 `;
 
 const UserHome = () => {
+    const contractContext = useContext(ContractContext);
+    const { contracts } = contractContext;
+
     return (
         <Styles>
         <NavbarUser />
@@ -40,7 +44,7 @@ const UserHome = () => {
                 </div>
                 <div>
                     <h1 className="lead text-center"><strong>Contratos activos</strong></h1>
-                    <Contracts />
+                    <Contracts contracts={contracts} />
                 </div>
             </div>
         </Layout>

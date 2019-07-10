@@ -8,6 +8,7 @@ import ExecutiveHome from './pages/executive/ExecutiveHome';
 import InfoContratos from './components/userTipes/user/contracts/InfoContratos';
 import ContractState from './context/contract/ContractState';
 import ExecutiveAddContract from './pages/executive/ExecutiveAddContract';
+import ListContracts from './pages/user/ListContracts';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
             <Route exact path='/ejecutivo' component={ExecutiveHome} />
             <Route exact path='/info-contratos' component={InfoContratos} />
             <Route exact path='/agregar-contrato' component={ExecutiveAddContract} />
+            <Route exact path='/lista-contratos' component={ListContracts} />
             <Route component={NoMatch} />
           </Switch>
         </React.Fragment>
