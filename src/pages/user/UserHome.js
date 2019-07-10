@@ -21,12 +21,22 @@ const Styles = styled.div`
         margin-bottom: 2rem;
     }
 
+    h1 {
+        margin-bottom: 10px;
+    }
+
     .container {
         max-width: 1600px;
     }
 
     .divm {
         width: 1000px;
+    }
+
+    .bordecito {
+        border: 2px solid gray;
+        border-radius: 10px;
+        padding: 20px;
     }
 `;
 
@@ -36,18 +46,23 @@ const UserHome = () => {
 
     return (
         <Styles>
-        <NavbarUser />
-        <Layout>
-            <div className="grid-2">
-                <div className="divm">
-                <h1 className="lead text-center"><strong>Información general</strong></h1>
-                </div>
+            <NavbarUser />
+            <Layout>
                 <div>
-                    <h1 className="lead text-center"><strong>Contratos activos</strong></h1>
-                    <Contracts contracts={contracts} />
+                    <h1 className="display-4 lead text-center mb-1">¡Bienvenido!</h1>
+                    <p className="lead text-center">¿Qué deseas hacer hoy?</p>
                 </div>
-            </div>
-        </Layout>
+                <div className="grid-2" style={{ paddingTop: "30px", marginBottom: "100px" }}>
+                    <div className="divm bordecito">
+                        <h1 className="lead text-center"><strong>Información general</strong></h1>
+                        <p className="lead">Aquí irá la información que suben los ejecutivos de ventas como Dashboard~</p>
+                    </div>
+                    <div className="bordecito">
+                        <h1 className="lead text-center"><strong>Contratos activos</strong></h1>
+                        <Contracts contracts={contracts} />
+                    </div>
+                </div>
+            </Layout>
         </Styles>
     )
 }

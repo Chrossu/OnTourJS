@@ -54,7 +54,7 @@ const Styles = styled.div`
     }
 
     strong {
-        color: #007bff;
+        color: #1988ff;
     }
 }
 `;

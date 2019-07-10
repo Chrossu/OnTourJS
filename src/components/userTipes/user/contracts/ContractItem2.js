@@ -51,7 +51,7 @@ const Styles = styled.div`
     }
 
     .color-azul {
-        color: #2796fd;
+        color: #1988ff;
     }
 
     strong {
@@ -60,7 +60,6 @@ const Styles = styled.div`
     
     .centro2 {
         margin: auto;
-        margin: 0px 0px;
         width: 50%;
         padding: 10px;
       }
@@ -76,16 +75,16 @@ const ContractItem = ({ contract }) => {
 
     return (
         <Styles>
-            <div className="carta bg-lighto">
+            <div className="carta bg-lighto" style={{ marginBottom: "30px" }}>
                 <div>
                     <h3 className="text-primario text-center" style={{ marginBottom: "20px" }}>
                         {name}
                     </h3>
                     <ul>
-                        <li><i className="fas fa-money-bill mr-3 color-verde"></i>Monto total paquete: ${numberWithCommas(totalAmount)}</li>
+                        <li><i className="fas fa-money-bill mr-3 color-verde"></i>Monto <strong className="color-verde">total</strong> paquete: ${numberWithCommas(totalAmount)}</li>
                         <li><i className="fas fa-crosshairs color-azul" style={{ marginRight: "20px", marginTop: "8px" }}></i>Monto <strong>actual</strong> paquete: ${numberWithCommas(currentAmount)}</li>
                         <li><i className="fas fa-umbrella-beach mr-3" />Descripción: {description}</li>
-                        <li><i className="fas fa-car-crash mr-3"></i>¿Asegurado? {insurance === true ? <Badge variant="success">Asegurado</Badge> : <Badge variant="danger">NO asegurado</Badge>}</li>
+                        <li><i className="fas fa-car-crash mr-3"></i>¿Asegurado? {insurance === true ? <Badge variant="success">Asegurado</Badge> : <Badge variant="danger">No asegurado</Badge>}</li>
                         <li><i className="fas fa-calendar-day mr-4" />Fecha de creación: {date}</li>
                     </ul>
                     <Button className="centro2" variant="outline-success">Depositar</Button>

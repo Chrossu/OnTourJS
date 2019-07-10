@@ -13,7 +13,7 @@ const Styles = styled.div`
     }
 
     .container {
-        max-width: 1600px;
+        max-width: 1550px;
     }
 
     .centro {
@@ -33,7 +33,7 @@ const ListContracts = () => {
             <NavbarUser />
             <Layout>
                 <div className="divm">
-                    <h1 className="display-4 lead text-center">¡Bienvenido!</h1>
+                    <h1 className="display-4 lead text-center">Lista de contratos</h1>
                     <p className="lead text-center">Aquí encontrarás todos tus contratos vigentes.</p>
                 </div>
                 <div className="centro mb-5">
