@@ -48,6 +48,7 @@ const ExecutiveRegister = (props) => {
             email,
             password
         })
+        setAlert('Usuario creado exitosamente', 'success');
     }
 
     return (
@@ -79,7 +80,7 @@ const ExecutiveRegister = (props) => {
 
 
                         {/* //--------- Buttons */}
-                        <Button className="mr-3" variant="info" type="submit">Ingresar contrato</Button>
+                        <Button className="mr-3" variant="info" type="submit">Crear usuario</Button>
                         <Button variant="secondary">Limpiar campos</Button>
                     </Form>
                 </Layout>

@@ -1,12 +1,13 @@
 import React, { useReducer } from 'react';
-import uuid from 'uuid';
+import axios from 'axios';
 import ContractContext from './contractContext';
 import contractReducer from './contractReducer';
 import {
     ADD_CONTRACT,
     UPDATE_CONTRACT,
     SET_CURRENT,
-    CLEAR_CURRENT
+    CLEAR_CURRENT,
+    CONTRACT_ERROR
 } from '../types';
 
 const ContractState = (props) => {
@@ -45,16 +46,36 @@ const ContractState = (props) => {
             name: 'Sin seleccionar',
             currentAmount: 0,
             totalAmount: 0
-        }
+        },
+        error: null
     }
 
     const [state, dispatch] = useReducer(contractReducer, initialState);
 
     // Add contract
-    const addContract = contract => {
-        contract.id = uuid.v4();
-        dispatch({ type: ADD_CONTRACT, payload: contract });
-    }
+    const addContract = async contract => {
+        const config = {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          };
+
+          try {
+            const res = await axios.post('/api/contracts', contract, config);
+      
+            dispatch({
+              type: ADD_CONTRACT,
+              payload: res.data
+            });
+          } catch (err) {
+            dispatch({
+              type: CONTRACT_ERROR,
+              payload: err.response.msg
+            });
+          }
+        };
+        
+    
 
     // Set current contract
     const setCurrent = contract => {
@@ -87,6 +108,7 @@ const ContractState = (props) => {
         <ContractContext.Provider value={{
             contracts: state.contracts,
             current: state.current,
+            error: state.error,
             addContract,
             setCurrent,
             clearCurrent,

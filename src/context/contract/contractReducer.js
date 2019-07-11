@@ -2,7 +2,8 @@ import {
     ADD_CONTRACT,
     UPDATE_CONTRACT,
     SET_CURRENT,
-    CLEAR_CURRENT
+    CLEAR_CURRENT,
+    CONTRACT_ERROR
 } from '../types';
 
 export default (state, action) => {
@@ -32,6 +33,11 @@ export default (state, action) => {
                     totalAmount: 0
                 }
             }
+        case CONTRACT_ERROR:
+            return {
+                ...state,
+                error: action.payload
+            };
         default:
             return state;
     }

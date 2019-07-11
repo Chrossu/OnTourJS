@@ -32,12 +32,15 @@ router.post('/', [auth, [
     return res.status(400).json({ errors: errors.array() })
   }
 
-  const { name, totalAmount } = req.body;
+  const { user, description, name, totalAmount, insurance } = req.body;
+  
   try {
     const newContract = new Contract({
+      user,
       name,
-      totalAmount,
-      user: req.user.id
+      description,
+      insurance,
+      totalAmount
     });
 
     const contract = await newContract.save();
