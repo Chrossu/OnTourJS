@@ -40,7 +40,7 @@ const ExecutiveAddContract = () => {
                     {/* //--------- ID user */}
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Label>ID usuario</Form.Label>
-                        <Form.Control type="text" placeholder="Ingrese ID de usuario" name="user" value={user} onChange={onChange} />
+                        <Form.Control type="text" required placeholder="Ingrese ID de usuario" name="user" value={user} onChange={onChange} />
                     </Form.Group>
 
                     {/* //--------- Travel destination */}
@@ -60,13 +60,13 @@ const ExecutiveAddContract = () => {
                     {/* //--------- Travel description */}
                     <Form.Group controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Descripción de modalidad de viaje</Form.Label>
-                        <Form.Control as="textarea" rows="3" type="text" placeholder="Descripción del paquete" name="description" value={description} onChange={onChange} />
+                        <Form.Control as="textarea" required rows="3" type="text" placeholder="Descripción del paquete" name="description" value={description} onChange={onChange} />
                     </Form.Group>
 
                     {/* //--------- Total amount of travel */}
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Label>Valor total del paquete</Form.Label>
-                        <Form.Control type="number" placeholder="Monto del contrato (ingrese solo números)" name="totalAmount" value={totalAmount} onChange={onChange} />
+                        <Form.Control type="number" required placeholder="Monto del contrato (ingrese solo números)" name="totalAmount" value={totalAmount} onChange={onChange} />
                     </Form.Group>
 
                     {/* //--------- Insurance checker */}

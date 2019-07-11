@@ -56,9 +56,6 @@ const ContractState = (props) => {
         dispatch({ type: ADD_CONTRACT, payload: contract });
     }
 
-    // Delete contract
-
-
     // Set current contract
     const setCurrent = contract => {
         dispatch({ type: SET_CURRENT, payload: contract })

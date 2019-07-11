@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import styled from 'styled-components';
 import { Button } from 'react-bootstrap';
 import ContractContext from '../../../../context/contract/contractContext';
-import { Link } from 'react-router-dom'
 
 const Styles = styled.div`
     .carta {

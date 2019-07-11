@@ -1,10 +1,12 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { Row, Button, Col, Form } from 'react-bootstrap';
 import styled from 'styled-components'
 import { Layout } from '../../components/bootstrap/Layout';
 import NavbarUser from '../../components/userTipes/user/NavbarUser';
 import ContractItem3 from '../../components/userTipes/user/contracts/ContractItem3';
 import ContractContext from '../../context/contract/contractContext';
+import AlertContext from '../../context/alert/alertContext';
+import Alerts from '../../components/alerts/Alerts';
 
 const Styles = styled.div`
     
@@ -67,21 +69,30 @@ const Styles = styled.div`
 `;
 
 const Deposit = () => {
+    const alertContext = useContext(AlertContext)
+
+    const { setAlert } = alertContext;
+
     const contractContext = useContext(ContractContext);
     const { contracts, current, clearCurrent, updateContract } = contractContext;
     const montoRef = useRef(null);
 
     const onSubmit = e => {
         e.preventDefault();
-        updateContract(current.id, montoRef.current.value)
-        setTimeout(() => {
-            clearCurrent();
-        }, 20);
+        if (montoRef.current.value === '') {
+            setAlert('Por favor, ingrese un monto de depósito', 'danger');
+        } else {
+            updateContract(current.id, montoRef.current.value)
+            setTimeout(() => {
+                clearCurrent();
+            }, 20);
+        }
     }
 
     return (
         <React.Fragment>
             <NavbarUser />
+            <Alerts />
             <Styles>
                 <div>
                     <h1 className="display-4 lead text-center">Depositar en fondo común</h1>

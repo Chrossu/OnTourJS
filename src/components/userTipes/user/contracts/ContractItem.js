@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import ContractContext from '../../../../context/contract/contractContext';
 
 const Styles = styled.div`
     .carta {
@@ -67,6 +68,8 @@ function numberWithCommas(x) {
 const ContractItem = ({ contract }) => {
 const { name, currentAmount, totalAmount } = contract;
 
+const contractContext = useContext(ContractContext);
+
     return (
         <Styles>
             <div className="carta bg-lighto">
@@ -78,8 +81,8 @@ const { name, currentAmount, totalAmount } = contract;
                     <li><i className="fas fa-money-bill mr-2 color-verde"></i>Monto total paquete: ${numberWithCommas(totalAmount)}</li>
                     <li><i className="fas fa-crosshairs color-azul" style={{ marginRight: "13px", marginTop: "8px" }}></i>Monto <strong>actual</strong> paquete: ${numberWithCommas(currentAmount)}</li>
                 </ul>
-                <Button variant="outline-success">Depositar</Button>
-                <Link to="/lista-contratos"><Button variant="outline-primary">Más información</Button></Link>
+                <Link to="/user/depositar"><Button variant="outline-success" onClick={() => contractContext.setCurrent(contract)}>Depositar</Button></Link>
+                <Link to="/user/lista-contratos"><Button variant="outline-primary">Más información</Button></Link>
                 </div>
             </div>
         </Styles>

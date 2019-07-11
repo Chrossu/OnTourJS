@@ -11,6 +11,11 @@ const Styles = styled.div`
     }
 `;
 
+const onSubmit = e => {
+    e.preventDefault();
+    console.log("Login submit");
+}
+
 const Login = () => {
     return (
         <React.Fragment>
@@ -18,7 +23,7 @@ const Login = () => {
             <Styles>
                 <Layout>
                     <h1 className="display-3 mb-5 text-center" style={{ paddingTop: "100px" }}>Inicio de sesión</h1>
-                    <Form>
+                    <Form onSubmit={onSubmit}>
                         <Form.Group controlId="formBasicEmail">
                             <i className="fas fa-envelope-square size fa-lg pr-2" /><Form.Label>Correo electrónico</Form.Label>
                             <Form.Control type="email" placeholder="Enter email" />
@@ -32,7 +37,7 @@ const Login = () => {
                         <Form.Group controlId="formBasicChecbox">
                             <Form.Check type="checkbox" label="Recordar mi usuario" />
                         </Form.Group>
-                        <Link to="/user"><Button variant="primary" type="submit">Ingresar</Button></Link>
+                        <Link to="/user"><Button variant="primary" value="Login" type="submit">Ingresar</Button></Link>
                     </Form>
                 </Layout>
             </Styles>

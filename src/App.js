@@ -6,14 +6,21 @@ import Login from './pages/landpage/Login';
 import UserHome from './pages/user/UserHome';
 import ExecutiveHome from './pages/executive/ExecutiveHome';
 import InfoContratos from './components/userTipes/user/contracts/InfoContratos';
-import ContractState from './context/contract/ContractState';
 import ExecutiveAddContract from './pages/executive/ExecutiveAddContract';
 import ListContracts from './pages/user/ListContracts';
 import Deposit from './pages/user/Deposit';
+import ExecutiveRegister from './pages/executive/ExecutiveRegister';
+
+
+import ContractState from './context/contract/ContractState';
+import AuthState from './context/auth/AuthState';
+import AlertState from './context/alert/AlertState';
 
 const App = () => {
   return (
+    <AuthState>
     <ContractState>
+      <AlertState>
       <Router>
         <React.Fragment>
           <Switch>
@@ -28,11 +35,14 @@ const App = () => {
             {/* Executive pages */}
             <Route exact path='/ejecutivo' component={ExecutiveHome} />
             <Route exact path='/ejecutivo/agregar-contrato' component={ExecutiveAddContract} />
+            <Route exact path='/ejecutivo/nuevo-usuario' component={ExecutiveRegister} />
             <Route component={NoMatch} />
           </Switch>
         </React.Fragment>
       </Router>
+      </AlertState>
     </ContractState>
+    </AuthState>
   );
 }
 
