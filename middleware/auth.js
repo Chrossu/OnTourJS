@@ -6,17 +6,16 @@ module.exports = (req, res, next) => {
   const token = req.header('x-auth-token');
 
   // Check Token
-  if(!token) {
-    return res.status(401).json({ msg: 'No token, authorization denied' });
+  if (!token) {
+    return res.status(401).json({ msg: 'Sin token, autorización denegada.' });
   }
 
   try {
     const decoded = jwt.verify(token, config.get('jwtSecret'));
 
-    // Assign request user from the Token Payload
     req.user = decoded.user;
     next();
-  } catch (error) {
-    return res.status(401).json({ msg: 'Token is not valid' })
+  } catch (err) {
+    res.status(401).json({ msg: 'El token no es valido.' })
   }
 }

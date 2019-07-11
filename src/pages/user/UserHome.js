@@ -1,9 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react';
 import ContractContext from '../../context/contract/contractContext';
 import Contracts from '../../components/userTipes/user/contracts/Contracts';
 import NavbarUser from '../../components/userTipes/user/NavbarUser';
 import styled from 'styled-components';
 import { Layout } from '../../components/bootstrap/Layout';
+import AuthContext from '../../context/auth/authContext';
 
 const Styles = styled.div`
     .grid-2 {
@@ -41,6 +42,13 @@ const Styles = styled.div`
 `;
 
 const UserHome = () => {
+    const authContext = useContext(AuthContext);
+
+    useEffect(() => {
+        authContext.loadUser();
+        // eslint-disable-next-line
+    }, [])
+
     const contractContext = useContext(ContractContext);
     const { contracts } = contractContext;
 

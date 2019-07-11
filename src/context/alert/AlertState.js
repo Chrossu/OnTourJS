@@ -25,7 +25,7 @@ const AlertState = (props) => {
                 type: REMOVE_ALERT,
                 payload: id
             })
-        }, 4000);
+        }, 5000);
     }
 
     // Remove alert

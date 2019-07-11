@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../../../assets/logo.png'
+import AuthContext from '../../../context/auth/authContext';
 
 const Styles = styled.div`
     .navbar {
@@ -55,6 +56,13 @@ const Styles = styled.div`
 `;
 
 const NavbarUser = () => {
+    const authContext = useContext(AuthContext);
+    const { logout } = authContext;
+
+    const onLogout = () => {
+        logout();
+    }
+
     return (
         <Styles>
             <div className="navbar bg-primary">
@@ -69,7 +77,7 @@ const NavbarUser = () => {
                     <li style={{ marginTop: "13px" }}><Link to="/user"><i className="fas fa-home mr-1"></i>Home</Link></li>
                     <li style={{ marginTop: "13px" }}><Link to="/user/lista-contratos"><i className="fas fa-file-contract mr-1"></i>Contratos</Link></li>
                     <li style={{ marginTop: "13px" }}><Link to="/user/depositar"><i className="fas fa-hand-holding-usd mr-1"></i>Depósitar</Link></li>
-                    <li style={{ marginTop: "13px" }}><Link to="/"><i className="fas fa-power-off mr-2"></i>Logout</Link></li>
+                    <li style={{ marginTop: "13px" }}><Link to="/" onClick={onLogout}><i className="fas fa-power-off mr-2"></i>Logout</Link></li>
                 </ul>
             </div>
         </Styles>

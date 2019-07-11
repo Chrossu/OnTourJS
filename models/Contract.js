@@ -14,7 +14,7 @@ const ContractSchema = mongoose.Schema({
     required: true
   },
   insurance: {
-    type: boolean,
+    type: Boolean,
     required: true
   },
   totalAmount: {

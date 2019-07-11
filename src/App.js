@@ -10,11 +10,16 @@ import ExecutiveAddContract from './pages/executive/ExecutiveAddContract';
 import ListContracts from './pages/user/ListContracts';
 import Deposit from './pages/user/Deposit';
 import ExecutiveRegister from './pages/executive/ExecutiveRegister';
-
+import setAuthToken from './utils/setAuthToken';
 
 import ContractState from './context/contract/ContractState';
 import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
+import PrivateRoute from './components/routing/PrivateRoute';
+
+if (localStorage.token) {
+  setAuthToken(localStorage.token)
+}
 
 const App = () => {
   return (
@@ -28,10 +33,10 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route exact path='/login' component={Login} />
             {/* User pages */}
-            <Route exact path='/user' component={UserHome} />
-            <Route exact path='/user/contratos' component={InfoContratos} />
-            <Route exact path='/user/lista-contratos' component={ListContracts} />
-            <Route exact path='/user/depositar' component={Deposit} />
+            <PrivateRoute exact path='/user' component={UserHome} />
+            <PrivateRoute exact path='/user/contratos' component={InfoContratos} />
+            <PrivateRoute exact path='/user/lista-contratos' component={ListContracts} />
+            <PrivateRoute exact path='/user/depositar' component={Deposit} />
             {/* Executive pages */}
             <Route exact path='/ejecutivo' component={ExecutiveHome} />
             <Route exact path='/ejecutivo/agregar-contrato' component={ExecutiveAddContract} />
