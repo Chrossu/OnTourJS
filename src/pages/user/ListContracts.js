@@ -43,7 +43,7 @@ const ListContracts = () => {
                     <p className="lead text-center">Aquí encontrarás todos tus contratos vigentes.</p>
                 </div>
                 <div className="centro mb-5">
-                    {contracts.map(contract => <ContractItem2 key={contract.id} contract={contract} />)}
+                    {contracts.map(contract => <ContractItem2 key={contract._id} contract={contract} />)}
                 </div>
             </Layout>
         </Styles>

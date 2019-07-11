@@ -68,6 +68,10 @@ const Styles = styled.div`
     }
 `;
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
 const Deposit = () => {
     const alertContext = useContext(AlertContext)
 
@@ -87,7 +91,7 @@ const Deposit = () => {
         if (montoRef.current.value === '') {
             setAlert('Por favor, ingrese un monto de depósito', 'danger');
         } else {
-            updateContract(current.id, montoRef.current.value)
+            updateContract(current._id, montoRef.current.value)
             setTimeout(() => {
                 clearCurrent();
             }, 20);
@@ -116,10 +120,10 @@ const Deposit = () => {
                             </Row>
                             <Row>
                                 <Col>
-                                    <p className="p"><i style={{ marginRight: "10px" }} className="fas fa-money-bill color-verde" /><strong>Monto actual: </strong></p><Form.Control className="diswidth" plaintext readOnly value={current.currentAmount} />
+                                    <p className="p"><i style={{ marginRight: "10px" }} className="fas fa-money-bill color-verde" /><strong>Monto actual: </strong>$</p><Form.Control className="diswidth" plaintext readOnly value={numberWithCommas(current.currentAmount)} />
                                 </Col>
                                 <Col>
-                                    <p className="p"><i style={{ marginRight: "23px" }} className="fas fa-crosshairs color-azul" /><strong>Monto total: </strong></p><Form.Control className="diswidth mb-4" plaintext readOnly value={current.totalAmount} />
+                                    <p className="p"><i style={{ marginRight: "23px" }} className="fas fa-crosshairs color-azul" /><strong>Monto total: </strong></p>$<Form.Control className="diswidth mb-4" plaintext readOnly value={numberWithCommas(current.totalAmount)} />
                                 </Col>
                             </Row>
                             <Row>
@@ -135,7 +139,7 @@ const Deposit = () => {
                     <h1 className="text-center mt-3">Lista de contratos</h1>
                     {/* Start of contracts list */}
                     <div className="centro mb-5">
-                        {contracts.map(contract => <ContractItem3 key={contract.id} contract={contract} />)}
+                        {contracts.map(contract => <ContractItem3 key={contract._id} contract={contract} />)}
                     </div>
                 </Layout>
             </Styles>

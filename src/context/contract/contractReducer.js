@@ -24,7 +24,7 @@ export default (state, action) => {
         case UPDATE_CONTRACT:
             return {
                 ...state,
-                contracts: state.contracts.map(contract => contract.id === state.current.id ? contract = { id: contract.id, name: contract.name, description: contract.description, insurance: contract.insurance, totalAmount: contract.totalAmount, currentAmount: contract.currentAmount + parseInt(action.amount), date: contract.date } : contract),
+                contracts: state.contracts.map(contract => contract._id === state.current._id ? contract = { id: contract._id, name: contract.name, description: contract.description, insurance: contract.insurance, totalAmount: contract.totalAmount, currentAmount: contract.currentAmount + parseInt(action.amount), date: contract.date } : contract),
                 loading: false
             }
         case SET_CURRENT:
@@ -36,7 +36,7 @@ export default (state, action) => {
             return {
                 ...state,
                 current: {
-                    id: 'Sin seleccionar',
+                    _id: 'Sin seleccionar',
                     name: 'Sin seleccionar',
                     currentAmount: 0,
                     totalAmount: 0
