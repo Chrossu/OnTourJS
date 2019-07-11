@@ -1,11 +1,10 @@
-import React, { useState, useContext, useRef } from 'react';
+import React, { useState, useContext } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import NavbarExecutive from '../../components/userTipes/executive/NavbarExecutive';
 import { Layout } from '../../components/bootstrap/Layout';
 import ContractContext from '../../context/contract/contractContext';
 
 const ExecutiveAddContract = () => {
-    const checkql = useRef(null);
     const contractContext = useContext(ContractContext);
     const [contract, setContract] = useState({
         user: '',
@@ -15,13 +14,12 @@ const ExecutiveAddContract = () => {
         insurance: false
     });
 
-    const { user, description, totalAmount, insurance } = contract;
+    const { user, description, totalAmount } = contract;
 
     const onChange = e => setContract({ ...contract, [e.target.name]: e.target.value });
 
     const onSubmit = e => {
         e.preventDefault();
-        console.log([e.target.value]);
         contractContext.addContract(contract);
         setContract({
             user: '',
@@ -74,15 +72,12 @@ const ExecutiveAddContract = () => {
                     {/* //--------- Insurance checker */}
                     <Form.Check
                         className="mb-4"
-                        type="checkbox" 
-                        defaultChecked={false}
-                        name="insurance"                        
-                        onClick={insurance === true}
-                        ref={checkql}
+                        type="checkbox"
+                        value={true}
+                        name="insurance"
                         onChange={onChange}
-                        label="¿Agregar seguro al contrato?"                        
-                    />
-                    
+                        label="Contrato sin seguro"                        
+                    />                    
 
                     {/* //--------- Buttons */}
                     <Button className="mr-3" variant="info" type="submit">Ingresar contrato</Button>

@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 import { Row, Button, Col, Form } from 'react-bootstrap';
 import styled from 'styled-components'
 import { Layout } from '../../components/bootstrap/Layout';
@@ -74,8 +74,13 @@ const Deposit = () => {
     const { setAlert } = alertContext;
 
     const contractContext = useContext(ContractContext);
-    const { contracts, current, clearCurrent, updateContract } = contractContext;
+    const { contracts, current, clearCurrent, updateContract, getContract } = contractContext;
     const montoRef = useRef(null);
+
+    useEffect(() => {
+        getContract();
+        // eslint-disable-next-line
+    }, [])
 
     const onSubmit = e => {
         e.preventDefault();

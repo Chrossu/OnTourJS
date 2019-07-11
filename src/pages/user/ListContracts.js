@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import ContractContext from '../../context/contract/contractContext';
 import styled from 'styled-components';
 import { Layout } from '../../components/bootstrap/Layout';
@@ -27,7 +27,13 @@ const Styles = styled.div`
 
 const ListContracts = () => {
     const contractContext = useContext(ContractContext);
-    const { contracts } = contractContext;
+    const { contracts, getContract } = contractContext;
+
+    useEffect(() => {
+        getContract();
+        // eslint-disable-next-line
+    }, [])
+
     return (
         <Styles>
             <NavbarUser />
