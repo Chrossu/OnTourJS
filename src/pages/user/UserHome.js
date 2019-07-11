@@ -5,6 +5,7 @@ import NavbarUser from '../../components/userTipes/user/NavbarUser';
 import styled from 'styled-components';
 import { Layout } from '../../components/bootstrap/Layout';
 import AuthContext from '../../context/auth/authContext';
+import Spinner from '../../components/layout/Spinner';
 
 const Styles = styled.div`
     .grid-2 {
@@ -46,7 +47,7 @@ const UserHome = () => {
 
     
     const contractContext = useContext(ContractContext);
-    const { contracts, getContract } = contractContext;
+    const { contracts, getContract, loading } = contractContext;
     
     useEffect(() => {
         authContext.loadUser();
@@ -69,7 +70,7 @@ const UserHome = () => {
                     </div>
                     <div className="bordecito">
                         <h1 className="lead text-center"><strong>Contratos activos</strong></h1>
-                        <Contracts contracts={contracts} />
+                        {contracts !==null && !loading ? (<Contracts contracts={contracts} />) : <Spinner />}                        
                     </div>
                 </div>
             </Layout>

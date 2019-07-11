@@ -14,7 +14,7 @@ import {
 
 const ContractState = (props) => {
     const initialState = {
-        contracts: [],
+        contracts: null,
         current: {
             id: 'Sin seleccionar',
             name: 'Sin seleccionar',
@@ -66,7 +66,10 @@ const ContractState = (props) => {
         }
     };
 
-
+    // Update contract
+    const updateContract = (id, amount) => {
+        dispatch({ type: UPDATE_CONTRACT, payload: id, amount })
+    };
 
     // Set current contract
     const setCurrent = contract => {
@@ -85,11 +88,6 @@ const ContractState = (props) => {
                 }
             }
         })
-    };
-
-    // Update contract
-    const updateContract = (id, amount) => {
-        dispatch({ type: UPDATE_CONTRACT, payload: id, amount })
     };
 
     // Filter contracts
