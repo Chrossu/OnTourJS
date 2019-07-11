@@ -44,13 +44,15 @@ const Styles = styled.div`
 const UserHome = () => {
     const authContext = useContext(AuthContext);
 
+    
+    const contractContext = useContext(ContractContext);
+    const { contracts, getContract } = contractContext;
+    
     useEffect(() => {
         authContext.loadUser();
+        getContract();
         // eslint-disable-next-line
     }, [])
-
-    const contractContext = useContext(ContractContext);
-    const { contracts } = contractContext;
 
     return (
         <Styles>

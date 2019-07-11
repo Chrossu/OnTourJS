@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Button, Badge } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Styles = styled.div`
     .carta {
@@ -84,8 +85,7 @@ const ContractItem = ({ contract }) => {
                         <li><i className="fas fa-car-crash mr-3"></i>¿Asegurado? {insurance === true ? <Badge variant="success">Asegurado</Badge> : <Badge variant="danger">No asegurado</Badge>}</li>
                         <li><i className="fas fa-calendar-day mr-4" />Fecha de creación: {date}</li>
                     </ul>
-                    <Button className="centro2" variant="outline-success">Depositar</Button>
-                    <Button className="centro2" variant="outline-primary">Revisar</Button>
+                    <Link to='/user/depositar'><Button className="centro2" style={{ marginLeft: "170px" }} variant="outline-success">Depositar</Button></Link>
                 </div>
             </div>
         </Styles>

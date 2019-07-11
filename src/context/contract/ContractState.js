@@ -7,40 +7,14 @@ import {
     UPDATE_CONTRACT,
     SET_CURRENT,
     CLEAR_CURRENT,
-    CONTRACT_ERROR
+    CONTRACT_ERROR,
+    GET_CONTRACTS,
+    CLEAR_CONTRACTS
 } from '../types';
 
 const ContractState = (props) => {
     const initialState = {
-        contracts: [
-            {
-                id: 1,
-                name: 'Tokyo, Japón',
-                currentAmount: 12000,
-                totalAmount: 2000000,
-                description: 'Viaje maravilloso acompañado de pack N°2 con mujerzuelas',
-                insurance: true,
-                date: '04/07/2019'
-            },
-            {
-                id: 2,
-                name: 'Buenos Aires, Argentina',
-                currentAmount: 90000,
-                totalAmount: 5000000,
-                description: 'Viaje maravilloso acompañado de pack N°4 con lolis',
-                insurance: false,
-                date: '04/07/2019'
-            },
-            {
-                id: 3,
-                name: 'Torres del Paine, Chile',
-                currentAmount: 32000,
-                totalAmount: 3000000,
-                description: 'Viaje maravilloso acompañado de pack N°1 con mujerzuelos y cabaña de 3 pisos',
-                insurance: false,
-                date: '04/07/2019'
-            }
-        ],
+        contracts: [],
         current: {
             id: 'Sin seleccionar',
             name: 'Sin seleccionar',
@@ -52,30 +26,47 @@ const ContractState = (props) => {
 
     const [state, dispatch] = useReducer(contractReducer, initialState);
 
+    // Get contracts
+    const getContract = async () => {
+        try {
+            const res = await axios.get('/api/contracts');
+
+            dispatch({
+                type: GET_CONTRACTS,
+                payload: res.data
+            });
+        } catch (err) {
+            dispatch({
+                type: CONTRACT_ERROR,
+                payload: err.response.msg
+            });
+        }
+    };
+
     // Add contract
     const addContract = async contract => {
         const config = {
             headers: {
-              'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
             }
-          };
-
-          try {
-            const res = await axios.post('/api/contracts', contract, config);
-      
-            dispatch({
-              type: ADD_CONTRACT,
-              payload: res.data
-            });
-          } catch (err) {
-            dispatch({
-              type: CONTRACT_ERROR,
-              payload: err.response.msg
-            });
-          }
         };
-        
-    
+
+        try {
+            const res = await axios.post('/api/contracts', contract, config);
+
+            dispatch({
+                type: ADD_CONTRACT,
+                payload: res.data
+            });
+        } catch (err) {
+            dispatch({
+                type: CONTRACT_ERROR,
+                payload: err.response.msg
+            });
+        }
+    };
+
+
 
     // Set current contract
     const setCurrent = contract => {
@@ -84,14 +75,16 @@ const ContractState = (props) => {
 
     // Clear current contract
     const clearCurrent = contract => {
-        dispatch({ type: CLEAR_CURRENT, payload: {
-            current: {
-                id: 'Sin seleccionar',
-                name: 'Sin seleccionar',
-                currentAmount: 0,
-                totalAmount: 0
+        dispatch({
+            type: CLEAR_CURRENT, payload: {
+                current: {
+                    id: 'Sin seleccionar',
+                    name: 'Sin seleccionar',
+                    currentAmount: 0,
+                    totalAmount: 0
+                }
             }
-        } })
+        })
     };
 
     // Update contract
@@ -112,7 +105,8 @@ const ContractState = (props) => {
             addContract,
             setCurrent,
             clearCurrent,
-            updateContract
+            updateContract,
+            getContract
         }}>
             {props.children}
         </ContractContext.Provider>

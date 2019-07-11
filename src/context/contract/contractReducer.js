@@ -3,20 +3,29 @@ import {
     UPDATE_CONTRACT,
     SET_CURRENT,
     CLEAR_CURRENT,
-    CONTRACT_ERROR
+    CONTRACT_ERROR,
+    GET_CONTRACTS
 } from '../types';
 
 export default (state, action) => {
     switch (action.type) {
+        case GET_CONTRACTS:
+            return {
+                ...state,
+                contracts: action.payload,
+                loading: false
+            }
         case ADD_CONTRACT:
             return {
                 ...state,
-                contracts: [...state.contracts, action.payload]
+                contracts: [...state.contracts, action.payload],
+                loading: false
             }
         case UPDATE_CONTRACT:
             return {
                 ...state,
-                contracts: state.contracts.map(contract => contract.id === state.current.id ? contract = { id: contract.id, name: contract.name, description: contract.description, insurance: contract.insurance, totalAmount: contract.totalAmount, currentAmount: contract.currentAmount + parseInt(action.amount), date: contract.date } : contract)
+                contracts: state.contracts.map(contract => contract.id === state.current.id ? contract = { id: contract.id, name: contract.name, description: contract.description, insurance: contract.insurance, totalAmount: contract.totalAmount, currentAmount: contract.currentAmount + parseInt(action.amount), date: contract.date } : contract),
+                loading: false
             }
         case SET_CURRENT:
             return {

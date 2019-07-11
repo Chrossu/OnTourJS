@@ -1,8 +1,10 @@
 // Client types
+export const GET_CONTRACTS = 'GET_CONTRACTS';
 export const ADD_CONTRACT = 'ADD_CONTRACT';
 export const UPDATE_CONTRACT = 'UPDATE_CONTRACT';
 export const SET_CURRENT = 'SET_CURRENT';
 export const CLEAR_CURRENT = 'CLEAR_CURRENT';
+export const CLEAR_CONTRACTS = 'CLEAR_CONTRACTS';
 
 // Express types
 export const SET_ALERT = 'SET_ALERT';
